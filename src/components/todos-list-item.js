@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default class TodosListItem extends React.Component {
-    constructor(props) {
+    constructor(props) {   //创建了一个状态，可编辑isEditing，它的默认值为否，也就是不可编辑 。
         super(props);
 
         this.state = {
@@ -17,7 +17,7 @@ export default class TodosListItem extends React.Component {
             cursor: 'pointer'
         };
 
-        if (this.state.isEditing) {
+        if (this.state.isEditing) {  //判断是否正在编辑，如果正在编辑，则返回的这个td是一个带有输入框的表单
             return (
                 <td>
                     <form onSubmit={this.onSaveClick.bind(this)}>
@@ -64,14 +64,15 @@ export default class TodosListItem extends React.Component {
     }
 
     onEditClick() {
-        this.setState({ isEditing: true });
+        this.setState({ isEditing: true });          //因为是与render()方法并列所以这几个方法都是todos-list-item的属性。
+                                                    //点击编辑按钮改变状态为可编辑
     }
 
     onCancelClick() {
-        this.setState({ isEditing: false });
+        this.setState({ isEditing: false });        //点击取消按钮改变状态为不可编辑
     }
 
-    onSaveClick(event) {
+    onSaveClick(event) {                            //点击保存按钮之后改变状态为不可编辑。
         event.preventDefault();
 
         const oldTask = this.props.task;

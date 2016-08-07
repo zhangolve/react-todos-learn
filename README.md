@@ -14,6 +14,3 @@ Please don't abuse :).
 3. `webpack-dev-server`
 4. Go to `localhost:8080`
 
-## YouTube Video Tutorial
-
-<a href="https://www.youtube.com/watch?v=IR6smI_YJDE" target="_blank">https://www.youtube.com/watch?v=IR6smI_YJDE</a>
